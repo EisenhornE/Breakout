@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D _rb;
-    private float horizontalInput;
+    private float _horizontalInput;
+    [SerializeField] private float _speed = 10f;
 
     void Start()
     {
@@ -14,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        _rb.velocity = new Vector2(horizontalInput * 10, 0);
+        _horizontalInput = Input.GetAxis("Horizontal");
+        _rb.velocity = new Vector2(_horizontalInput * _speed, 0);
     }
 }
