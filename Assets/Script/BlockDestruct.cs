@@ -1,11 +1,10 @@
-
 using UnityEngine;
 
 public class BlockDestruct : MonoBehaviour
 {
-    void OnCollisionEnter(Collision other)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.name == "Ball")
+        if (collision.gameObject.tag == "Ball")
         {
             Destroy(gameObject);
         }
