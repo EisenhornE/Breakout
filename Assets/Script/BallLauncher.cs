@@ -39,7 +39,7 @@ public class BallLauncher : MonoBehaviour
     void LaunchBall()
     {
         float randomAngle = Random.Range(-60f, 60f);
-        Vector2 launchDirection = Quaternion.Euler(0f, 0f, randomAngle) * Vector2.up;
+        Vector2 launchDirection = Quaternion.Euler(0f, 0f, randomAngle) * Vector2.down;
         launchDirection.Normalize();
         _ballRb.AddForce(launchDirection.normalized * launchSpeed, ForceMode2D.Impulse);
         Debug.Log("Launch is working");

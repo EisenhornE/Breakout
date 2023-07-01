@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4554630785088461776}
   - component: {fileID: 5676299211214349305}
   - component: {fileID: 6340681412103269370}
+  - component: {fileID: 8905949087639313974}
+  - component: {fileID: 8421923327234876022}
   m_Layer: 0
   m_Name: 'Red '
   m_TagString: RBlock
@@ -31,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5676299211214349305
 SpriteRenderer:
@@ -130,3 +132,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8905949087639313974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8312955286794089771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ae900e9104bf64e9ea3397ade8e695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8421923327234876022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8312955286794089771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ae900e9104bf64e9ea3397ade8e695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
