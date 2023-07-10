@@ -10,6 +10,7 @@ TagManager:
   - RBlock
   - GBlock
   - PBlock
+  - Ball
   layers:
   - Default
   - TransparentFX
