@@ -1581,7 +1581,7 @@ Transform:
   - {fileID: 1853858817}
   - {fileID: 1041885209}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -1673,7 +1673,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519728536
 GameObject:
@@ -3486,7 +3486,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1133208906 stripped
 Transform:
@@ -4520,7 +4520,7 @@ Transform:
   m_Children:
   - {fileID: 1952292624}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1549284713 stripped
 Transform:
@@ -4971,7 +4971,7 @@ Transform:
   - {fileID: 1863103856}
   - {fileID: 835970135}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1659198497
 PrefabInstance:
@@ -5064,7 +5064,7 @@ Transform:
   m_Children:
   - {fileID: 1891709519}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1689143735 stripped
 Transform:
@@ -5733,7 +5733,7 @@ RectTransform:
   m_Children:
   - {fileID: 1634549237}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5915,6 +5915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ae900e9104bf64e9ea3397ade8e695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
 --- !u!1 &1962104010
 GameObject:
   m_ObjectHideFlags: 0
@@ -6309,6 +6310,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4554630785088461776, guid: d1fd77240198ce44fbdca34b41699be0, type: 3}
   m_PrefabInstance: {fileID: 628960905}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2063668238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2063668239}
+  - component: {fileID: 2063668240}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2063668239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063668238}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2063668240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063668238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cac22a271c12ce41b655d3370a70755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clip: {fileID: 8300000, guid: 64e6a2aab3549e94ba70ba3bc985e4f0, type: 3}
+    volume: 1
+    pitch: 1
+    name: BlockDestruct
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 64d3ef0013e730f4585af035874950bf, type: 3}
+    volume: 1
+    pitch: 1
+    name: Bump
+    source: {fileID: 0}
 --- !u!4 &2076406954 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5558336856299111299, guid: 885212edac339df4a902a5137f75cbc3, type: 3}
