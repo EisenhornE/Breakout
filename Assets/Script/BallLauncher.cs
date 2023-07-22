@@ -7,12 +7,14 @@ public class BallLauncher : MonoBehaviour
     [SerializeField] private float launchSpeed = 5f;
     private Rigidbody2D _ballRb;
     private Vector2 _origPosition;
+    private AudioManager _audioManager;
 
     void Start()
     {
         _ballRb = GetComponent<Rigidbody2D>();
         StartCoroutine(Pause());
         _origPosition = transform.position;
+        _audioManager = FindObjectOfType<AudioManager>();
     }
 
     void Update()
@@ -51,7 +53,7 @@ public class BallLauncher : MonoBehaviour
         {
             ResetBallPosition();
             StartCoroutine(Pause());
-            Debug.Log("Trigger is working");
+            _audioManager.Play("OutOfBounds");
         }
     }
 }
