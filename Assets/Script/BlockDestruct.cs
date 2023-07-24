@@ -3,12 +3,12 @@ using UnityEngine;
 public class BlockDestruct : MonoBehaviour
 {
 
-    private GameManager _gameManager;
+    private ScoreManager _scoreManager;
     public AudioManager audioManager;
 
     void Start()
     {
-        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        _scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         audioManager = FindObjectOfType<AudioManager>();
     }
 
@@ -16,31 +16,31 @@ public class BlockDestruct : MonoBehaviour
     {
         if (other.gameObject.tag == "BBlock")
         {
-            _gameManager.AddScore(5);
+            _scoreManager.AddScore(5);
             audioManager.Play("BlockDestruct");
             Destroy(other.gameObject);
         }
         else if (other.gameObject.tag == "RBlock")
         {
-            _gameManager.AddScore(1);
+            _scoreManager.AddScore(1);
             audioManager.Play("BlockDestruct");
             Destroy(other.gameObject);
         }
         else if (other.gameObject.tag == "GBlock")
         {
-            _gameManager.AddScore(10);
+            _scoreManager.AddScore(10);
             audioManager.Play("BlockDestruct");
             Destroy(other.gameObject);
         }
         else if (other.gameObject.tag == "YBlock")
         {
-            _gameManager.AddScore(15);
+            _scoreManager.AddScore(15);
             audioManager.Play("BlockDestruct");
             Destroy(other.gameObject);
         }
         else if (other.gameObject.tag == "PBlock")
         {
-            _gameManager.AddScore(20);
+            _scoreManager.AddScore(20);
             audioManager.Play("BlockDestruct");
             Destroy(other.gameObject);
         }
