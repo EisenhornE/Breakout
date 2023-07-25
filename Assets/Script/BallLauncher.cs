@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BallLauncher : MonoBehaviour
@@ -29,7 +28,6 @@ public class BallLauncher : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         LaunchBall();
-        Debug.Log("Pause is working");
     }
 
     void ResetBallPosition()
@@ -44,7 +42,6 @@ public class BallLauncher : MonoBehaviour
         Vector2 launchDirection = Quaternion.Euler(0f, 0f, randomAngle) * Vector2.down;
         launchDirection.Normalize();
         _ballRb.AddForce(launchDirection.normalized * launchSpeed, ForceMode2D.Impulse);
-        Debug.Log("Launch is working");
     }
 
     void OnTriggerEnter2D(Collider2D collision)
