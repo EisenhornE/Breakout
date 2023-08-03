@@ -8,8 +8,7 @@ public class BallLauncher : MonoBehaviour
     private Rigidbody2D _ballRb;
     private Vector2 _origPosition;
     private AudioManager _audioManager;
-    private GameManager _gameManager;
-    private Coroutine _speedIncreaseCoRoutine;
+
 
     void Start()
     {
@@ -17,7 +16,6 @@ public class BallLauncher : MonoBehaviour
         StartCoroutine(Pause());
         _origPosition = transform.position;
         _audioManager = FindObjectOfType<AudioManager>();
-        _gameManager = FindObjectOfType<GameManager>();
     }
 
     void Update()
