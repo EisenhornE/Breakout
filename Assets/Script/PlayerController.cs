@@ -17,10 +17,9 @@ public class PlayerController : MonoBehaviour
     {
         _horizontalInput = Input.GetAxis("Horizontal");
         _rb.velocity = new Vector2(_horizontalInput * _speed, 0);
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        _audioManager.Play("Bump");
+        if (_horizontalInput == 0f)
+        {
+            _rb.velocity = Vector2.zero;
+        }
     }
 }

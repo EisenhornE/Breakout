@@ -11,6 +11,7 @@ TagManager:
   - GBlock
   - PBlock
   - Ball
+  - Wall
   layers:
   - Default
   - TransparentFX
