@@ -4,13 +4,11 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D _rb;
     private float _horizontalInput;
-    private AudioManager _audioManager;
     [SerializeField] private float _speed = 10f;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _audioManager = FindObjectOfType<AudioManager>();
     }
 
     void FixedUpdate()
