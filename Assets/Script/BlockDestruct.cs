@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// This script is for the blocks that the ball will destroy. The blocks are tagged with their respective colors.
+
 public class BlockDestruct : MonoBehaviour
 {
 
@@ -12,6 +14,10 @@ public class BlockDestruct : MonoBehaviour
         _scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         audioManager = FindObjectOfType<AudioManager>();
     }
+
+    // I used switch case here instead of if-else to make it look more readable. I feel that there is a better way to do this.
+    // I just don't know yet. The SaveHighScore() function is called here so that the player's score will be updated immediately
+    // if the condition is right.
 
     void OnCollisionEnter2D(Collision2D other)
     {

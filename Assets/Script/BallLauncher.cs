@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
+// This script is for the Ball GameObject. This is for its movement and collision with other GameObjects.
+
 public class BallLauncher : MonoBehaviour
 {
     [SerializeField] public float launchSpeed = 5f;
@@ -23,6 +25,11 @@ public class BallLauncher : MonoBehaviour
         }
     }
 
+    // In the Update function, here you can see that I used the Vector2.ClampMagnitude function to clamp the ball's velocity as
+    // the ball, probably due to how Unity's physics engine works, can go faster than the launchSpeed variable if it collides
+    // multiple times with the player platform. This is to prevent the ball from going too fast and breaking the game.
+    // I also used the launchEnabled bool to prevent the ball from launching when the player loses all their lives.
+
     void Update()
     {
         if (_ballRb.velocity.magnitude > launchSpeed)
@@ -36,11 +43,16 @@ public class BallLauncher : MonoBehaviour
         }
     }
 
+    // This Coroutine here is so that there is a short pause after the ball is lost. This is so that the player can prepare.
+
     IEnumerator Pause()
     {
         yield return new WaitForSeconds(1);
         LaunchBall();
     }
+
+    // This function here is called in the GameManager script when the ball collides with the below the player platform.
+    // It returns to its original location. If the player has only 1 life, then the ball will be destroyed instead.
 
     void ResetBallPosition()
     {
@@ -53,10 +65,13 @@ public class BallLauncher : MonoBehaviour
         {
             _ballRb.velocity = Vector2.zero;
             GameObject ball = GameObject.Find("Ball");
-            ball.GetComponent<SpriteRenderer>().enabled = false;
+            Destroy(gameObject);
         }
         launchEnabled = true;
     }
+
+    // This function is if the launchEnabled bool is true, then the ball will be launched at a random angle between -60 and 60 degrees.
+    // The launchEnabled bool will then be set to false.
 
     void LaunchBall()
     {
@@ -70,6 +85,7 @@ public class BallLauncher : MonoBehaviour
         }
     }
 
+    // This is when the ball goes out of bounds, it will call the ResetBallPosition function and play the OutOfBounds sound effect.
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -84,6 +100,10 @@ public class BallLauncher : MonoBehaviour
             }
         }
     }
+
+    // This function is so that there is a random angle when the ball collides with the player platform. This is to prevent the ball
+    // from having a predictable angle when it collides with the player platform. This is also to almost copy the same feel of the original
+    // Breakout game. The Audio named "Bump" in the AudioManager is also played.
 
     void OnCollisionEnter2D(Collision2D collision)
     {

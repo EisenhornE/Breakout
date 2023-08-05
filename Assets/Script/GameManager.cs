@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
         _audioManager = FindObjectOfType<AudioManager>();
     }
 
+    // Self explanatory. This function is called in the BallLauncher script when the ball collides with the below the player platform.
+
     public void LoseLife()
     {
         Lives--;
@@ -29,11 +31,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // This function is called in the ScoreManager script when the player's score is divisible by 100. This is so that
+    // the player can have an extra chance to get a higher score.
+
     public void AddLife()
     {
         Lives++;
         _livesText.text = "Lives: " + Lives;
     }
+
+    // This Update() here is for when the player presses the Escape key, the game will pause and the menu will appear.
+    // Pressing the Escape key again will resume the game. Time.timescale is used to pause the game. with 0 being paused
+    // and 1 being normal speed. I can see this being used in a simulation game in the future
 
     void Update()
     {
@@ -54,6 +63,9 @@ public class GameManager : MonoBehaviour
         if (_GameOver == null)
             Debug.Log("Game Over is null");
     }
+
+    // This is a coroutine that waits for 3 seconds before loading the Main Menu scene after the player loses all their lives.
+    // This is to give the player a chance to see the Game Over screen and see their highscore.
 
     IEnumerator GameOver()
     {

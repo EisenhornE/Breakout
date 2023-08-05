@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// As you can see, this script is very simple. It's just for the player to move left and right.
+
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D _rb;

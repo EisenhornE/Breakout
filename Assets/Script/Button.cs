@@ -1,6 +1,10 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
+// The codes here are self explanatory. This script must be either be dragged/placed in the GameManager or the Canvas. 
+// I recommend that you choose based on the situation as this script can be found in my Start GameObject in the Main Menu scene.
+// and in the Canvas GameObject in the Game scene.
+
 public class Button : MonoBehaviour
 {
     private GameObject _menuCanvas;

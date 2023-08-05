@@ -19,6 +19,9 @@ public class ScoreManager : MonoBehaviour
         _highScoreText.text = "Highscore: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
 
+    // As its name suggests, it adds scores based on what block is destroyed. The AddLife() function is also called here
+    // every time the score reaches a number that is divisible by 100.
+
     public void AddScore(int points)
     {
         score += points;
