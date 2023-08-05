@@ -5778,7 +5778,7 @@ GameObject:
   - component: {fileID: 1014129890}
   m_Layer: 5
   m_Name: MenuCanvas
-  m_TagString: Untagged
+  m_TagString: PauseMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11435,6 +11435,11 @@ MonoBehaviour:
     pitch: 1
     name: OutOfBounds
     source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: e8872df01aecb29488837d24e202ab04, type: 3}
+    volume: 1
+    pitch: 1
+    name: Menu
+    source: {fileID: 0}
 --- !u!4 &2076406954 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5558336856299111299, guid: 885212edac339df4a902a5137f75cbc3, type: 3}
@@ -11837,6 +11842,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8711458141537268596, guid: 6f26ddbd5309997419d7274ec55902ed, type: 3}
+      propertyPath: _menuCanvas
+      value: 
+      objectReference: {fileID: 1014129889}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

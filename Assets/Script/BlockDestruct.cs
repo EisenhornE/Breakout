@@ -14,35 +14,33 @@ public class BlockDestruct : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "BBlock")
+        switch (other.gameObject.tag)
         {
-            _scoreManager.AddScore(5);
-            audioManager.Play("BlockDestruct");
-            Destroy(other.gameObject);
-        }
-        else if (other.gameObject.tag == "RBlock")
-        {
-            _scoreManager.AddScore(1);
-            audioManager.Play("BlockDestruct");
-            Destroy(other.gameObject);
-        }
-        else if (other.gameObject.tag == "GBlock")
-        {
-            _scoreManager.AddScore(10);
-            audioManager.Play("BlockDestruct");
-            Destroy(other.gameObject);
-        }
-        else if (other.gameObject.tag == "YBlock")
-        {
-            _scoreManager.AddScore(15);
-            audioManager.Play("BlockDestruct");
-            Destroy(other.gameObject);
-        }
-        else if (other.gameObject.tag == "PBlock")
-        {
-            _scoreManager.AddScore(20);
-            audioManager.Play("BlockDestruct");
-            Destroy(other.gameObject);
+            case "RBlock":
+                _scoreManager.AddScore(1);
+                Destroy(other.gameObject);
+                audioManager.Play("BlockDestruct");
+                break;
+            case "BBlock":
+                _scoreManager.AddScore(5);
+                Destroy(other.gameObject);
+                audioManager.Play("BlockDestruct");
+                break;
+            case "GBlock":
+                _scoreManager.AddScore(10);
+                Destroy(other.gameObject);
+                audioManager.Play("BlockDestruct");
+                break;
+            case "YBlock":
+                _scoreManager.AddScore(15);
+                Destroy(other.gameObject);
+                audioManager.Play("BlockDestruct");
+                break;
+            case "PBlock":
+                _scoreManager.AddScore(20);
+                Destroy(other.gameObject);
+                audioManager.Play("BlockDestruct");
+                break;
         }
     }
 }

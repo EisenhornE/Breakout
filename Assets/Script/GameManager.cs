@@ -6,11 +6,13 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public int Lives = 3;
     private TextMeshProUGUI _livesText;
     [SerializeField] private GameObject _menuCanvas;
+    private AudioManager _audioManager;
 
     void Start()
     {
         _livesText = GameObject.Find("Lives").GetComponent<TextMeshProUGUI>();
         _livesText.text = "Lives: " + Lives;
+        _audioManager = FindObjectOfType<AudioManager>();
     }
 
     public void LoseLife()
@@ -47,10 +49,7 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 1;
                 _menuCanvas.SetActive(false);
             }
-        }
-        if (_menuCanvas == null)
-        {
-            Debug.Log("MenuCanvas is null");
+            _audioManager.Play("Menu");
         }
     }
 }

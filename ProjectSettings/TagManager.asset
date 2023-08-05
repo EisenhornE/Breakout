@@ -12,6 +12,7 @@ TagManager:
   - PBlock
   - Ball
   - Wall
+  - PauseMenu
   layers:
   - Default
   - TransparentFX
