@@ -1,5 +1,7 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,6 +9,7 @@ public class GameManager : MonoBehaviour
     private TextMeshProUGUI _livesText;
     [SerializeField] private GameObject _menuCanvas;
     private AudioManager _audioManager;
+    [SerializeField] private GameObject _GameOver;
 
     void Start()
     {
@@ -22,10 +25,7 @@ public class GameManager : MonoBehaviour
 
         if (Lives == 0)
         {
-            Debug.Log("Game Over");
-            PlayerController playerController = FindObjectOfType<PlayerController>();
-            playerController.enabled = false;
-            playerController.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            StartCoroutine(GameOver());
         }
     }
 
@@ -51,5 +51,17 @@ public class GameManager : MonoBehaviour
             }
             _audioManager.Play("Menu");
         }
+        if (_GameOver == null)
+            Debug.Log("Game Over is null");
+    }
+
+    IEnumerator GameOver()
+    {
+        PlayerController playerController = FindObjectOfType<PlayerController>();
+        playerController.enabled = false;
+        playerController.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        _GameOver.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Main Menu");
     }
 }
