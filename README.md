@@ -4,6 +4,8 @@ This project is a recreation of a hit retro game called Breakout. Created in 197
 
 ## Screenshot
 
+![image](https://github.com/EisenhornE/Breakout/assets/55284645/d3d31fc4-de44-44c7-8505-be0abe90a169)
+
 ## Installation
 
 If you want to play the game, you can download the zip file and extract it. No executable files as I am still learning on how to create one. I'll update this once I learn how to do it. For now, I can send an Google Drive link if you want to play it.
