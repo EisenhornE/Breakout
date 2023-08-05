@@ -6,6 +6,7 @@ public class BlockDestruct : MonoBehaviour
     private ScoreManager _scoreManager;
     public AudioManager audioManager;
 
+
     void Start()
     {
         _scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
@@ -42,5 +43,6 @@ public class BlockDestruct : MonoBehaviour
                 audioManager.Play("BlockDestruct");
                 break;
         }
+        _scoreManager.SaveHighScore();
     }
 }

@@ -5,6 +5,7 @@ public class ScoreManager : MonoBehaviour
 {
     private static int score;
     private TextMeshProUGUI _scoreText;
+    private TextMeshProUGUI _highScoreText;
     private GameManager _gameManager;
     private bool isDivisibleby100;
 
@@ -14,6 +15,8 @@ public class ScoreManager : MonoBehaviour
         score = 0;
         _scoreText.text = "Score: " + score;
         _gameManager = FindObjectOfType<GameManager>();
+        _highScoreText = GameObject.Find("HighScore").GetComponent<TextMeshProUGUI>();
+        _highScoreText.text = "Highscore: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
 
     public void AddScore(int points)
@@ -27,6 +30,15 @@ public class ScoreManager : MonoBehaviour
         {
             _gameManager.AddLife();
             Debug.Log("Added a life!");
+        }
+    }
+
+    public void SaveHighScore()
+    {
+        if (score > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+            _highScoreText.text = "Highscore: " + score.ToString();
         }
     }
 }
