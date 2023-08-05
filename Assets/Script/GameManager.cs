@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     [HideInInspector] public int Lives = 3;
     private TextMeshProUGUI _livesText;
+    [SerializeField] private GameObject _menuCanvas;
 
     void Start()
     {
@@ -37,9 +38,19 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (Time.timeScale == 1)
+            {
                 Time.timeScale = 0;
+                _menuCanvas.SetActive(true);
+            }
             else
+            {
                 Time.timeScale = 1;
+                _menuCanvas.SetActive(false);
+            }
+        }
+        if (_menuCanvas == null)
+        {
+            Debug.Log("MenuCanvas is null");
         }
     }
 }
