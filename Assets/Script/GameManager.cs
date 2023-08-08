@@ -34,9 +34,9 @@ public class GameManager : MonoBehaviour
     // This function is called in the ScoreManager script when the player's score is divisible by 100. This is so that
     // the player can have an extra chance to get a higher score.
 
-    public void AddLife()
+    public void AddLife(int numLives = 1)
     {
-        Lives++;
+        Lives += numLives;
         _livesText.text = "Lives: " + Lives;
     }
 

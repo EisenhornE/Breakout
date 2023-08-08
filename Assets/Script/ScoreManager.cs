@@ -20,18 +20,17 @@ public class ScoreManager : MonoBehaviour
     }
 
     // As its name suggests, it adds scores based on what block is destroyed. The AddLife() function is also called here
-    // every time the score reaches a number that is divisible by 100.
+    // every time the score reaches a hundred number (eg. 100, 200, 300, etc.).
 
     public void AddScore(int points)
     {
         score += points;
         _scoreText.text = "Score: " + score;
 
-        isDivisibleby100 = score % 100 == 0;
-
-        if (isDivisibleby100 && score != 0)
+        if (score >= 100)
         {
-            _gameManager.AddLife();
+            int extraLife = score / 100;
+            _gameManager.AddLife(extraLife);
             Debug.Log("Added a life!");
         }
     }
