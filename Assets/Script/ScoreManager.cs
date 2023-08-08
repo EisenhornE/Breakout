@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
     private TextMeshProUGUI _scoreText;
     private TextMeshProUGUI _highScoreText;
     private GameManager _gameManager;
-    private bool isDivisibleby100;
+    private int lastScoreMultiple = 0;
 
     void Start()
     {
@@ -27,11 +27,16 @@ public class ScoreManager : MonoBehaviour
         score += points;
         _scoreText.text = "Score: " + score;
 
-        if (score >= 100)
+        // This line of code checks if the score reaches a multiple of 100
+        int currentScoreMultiple = score / 100;
+
+        if (currentScoreMultiple > lastScoreMultiple)
         {
-            int extraLife = score / 100;
-            _gameManager.AddLife(extraLife);
+            _gameManager.AddLife();
             Debug.Log("Added a life!");
+            // This line of code updates the currentScoreMultiple value to make sure that it doesn't add a life again until it reaches
+            // another 100.
+            lastScoreMultiple = currentScoreMultiple;
         }
     }
 
