@@ -17,6 +17,8 @@ public class Button : MonoBehaviour
     public void StartGameButton()
     {
         SceneManager.LoadScene("Game");
+        if (Time.timeScale == 0)
+            Time.timeScale = 1;
     }
 
     public void ResumeGame()
@@ -33,5 +35,13 @@ public class Button : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (Time.timeScale == 0)
+            Time.timeScale = 1;
+        StopAllCoroutines();
     }
 }

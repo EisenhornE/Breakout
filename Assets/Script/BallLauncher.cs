@@ -41,6 +41,17 @@ public class BallLauncher : MonoBehaviour
         {
             launchEnabled = false;
         }
+
+        if (GetBlockCountWithTag("RBlock") == 0 &&
+        GetBlockCountWithTag("BBlock") == 0 &&
+        GetBlockCountWithTag("YBlock") == 0 &&
+        GetBlockCountWithTag("GBlock") == 0 &&
+        GetBlockCountWithTag("PBlock") == 0
+        )
+        {
+            _ballRb.velocity = Vector2.zero;
+            StartCoroutine(_gameManager.Win());
+        }
     }
 
     // This Coroutine here is so that there is a short pause after the ball is lost. This is so that the player can prepare.
@@ -83,6 +94,12 @@ public class BallLauncher : MonoBehaviour
             _ballRb.AddForce(launchDirection.normalized * launchSpeed, ForceMode2D.Impulse);
             launchEnabled = false;
         }
+    }
+
+    int GetBlockCountWithTag(string tag)
+    {
+        GameObject[] blocks = GameObject.FindGameObjectsWithTag(tag);
+        return blocks.Length;
     }
 
     // This is when the ball goes out of bounds, it will call the ResetBallPosition function and play the OutOfBounds sound effect.

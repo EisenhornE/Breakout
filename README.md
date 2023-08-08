@@ -25,3 +25,16 @@ I would like to thank Brackeys as his tutorials helped me a ton for this project
 ## Contact
 
 If you want to contact me, you can reach me at my email: cjinicor@gmail.com or in my Discord: eisenhorn6232
+
+## Changelogs
+
+v1.1:
+
+- Fixed the resolution to fit WebGL screen size.
+- Fixed the additional life mechanic
+
+v1.2:
+
+- Fixed the game freezing when restarting the game or returning to main menu when you're in the middle of the game.
+- Added extra buttons to accomodate WebGL playstyle.
+- Added a Win Scenario

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _menuCanvas;
     private AudioManager _audioManager;
     [SerializeField] private GameObject _GameOver;
+    [SerializeField] private GameObject _Win;
 
     void Start()
     {
@@ -60,8 +61,6 @@ public class GameManager : MonoBehaviour
             }
             _audioManager.Play("Menu");
         }
-        if (_GameOver == null)
-            Debug.Log("Game Over is null");
     }
 
     // This is a coroutine that waits for 3 seconds before loading the Main Menu scene after the player loses all their lives.
@@ -73,6 +72,16 @@ public class GameManager : MonoBehaviour
         playerController.enabled = false;
         playerController.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         _GameOver.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Main Menu");
+    }
+
+    public IEnumerator Win()
+    {
+        PlayerController playerController = FindObjectOfType<PlayerController>();
+        playerController.enabled = false;
+        playerController.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        _Win.SetActive(true);
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("Main Menu");
     }
