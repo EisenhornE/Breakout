@@ -13,7 +13,7 @@ I first thought of learning how to create executable files but I'd rather move o
 
 ## Usage
 
-The controls are simple. Either A or D key or the left and right arrows keys to move horizontally. Press Esc to pause the game.
+The controls are simple. Either A or D key or the left and right arrow keys to move horizontally. Press Esc to pause the game.
 
 ## Features
 
@@ -21,7 +21,7 @@ There is no outstanding feature in this as this is merely a recreation of the re
 
 ## Credits
 
-I would like to thank Brackeys as his tutorials helped me a ton for this project. I also would like to thank the creators of sfxr for the free sound effects.
+I would like to thank Brackeys as his tutorials helped me a ton with this project. I also would like to thank the creators of sfxr for the free sound effects.
 
 ## Contact
 
@@ -36,6 +36,6 @@ v1.1:
 
 v1.2:
 
-- Fixed the game freezing when restarting the game or returning to main menu when you're in the middle of the game.
-- Added extra buttons to accomodate WebGL playstyle.
+- Fixed the game freezing when restarting the game or returning to the main menu when you're in the middle of the game.
+- Added extra buttons to accommodate WebGL playstyle.
 - Added a Win Scenario
