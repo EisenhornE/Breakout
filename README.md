@@ -1,6 +1,6 @@
 # Breakout
 
-This project is a recreation of a hit retro game called Breakout. Created in 1976, many people, enthusiasts or not, will know what this game is. Using Unity, I recreated it for the purpose of creating my portfolio.
+This project is a recreation of a hit retro game called Breakout. Created in 1976, many people, enthusiasts or not, will know what this game is. Using Unity, I recreated it for the purpose of improving my skills and adding to my portfolio.
 
 ## Screenshot
 
