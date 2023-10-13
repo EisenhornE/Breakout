@@ -1,6 +1,6 @@
 # Breakout
 
-This project is a recreation of a hit retro game called Breakout. Created in 1976, many people, enthusiasts or not, will know what this game is. Using Unity, I recreated it for the purpose of improving my skills and adding to my portfolio.
+This project is a recreation of a hit retro game called Breakout. Created in 1976, many people, enthusiasts or not, will know what this game is. Using Unity, I recreated it for the purpose of improving my skills and adding to my portfolio. The main purpose of this project is to show that I can understand the basics of player controls, audio, and player data.
 
 ## Screenshot
 
@@ -8,7 +8,7 @@ This project is a recreation of a hit retro game called Breakout. Created in 197
 
 ## Installation
 
-No Need to install. Head to this link to play the game: https://simmer.io/@eisenhorn/breakout
+No Need to install it. Head to this link to play the game: https://simmer.io/@eisenhorn/breakout
 I first thought of learning how to create executable files but I'd rather move on now and sending ZIP files to others might make me look suspicious
 
 ## Usage
